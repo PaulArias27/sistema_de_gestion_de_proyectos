@@ -11,7 +11,7 @@ public class Tarea {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Column(nullable = false,length = 200)
     private String descripcion;
@@ -37,7 +37,7 @@ public class Tarea {
     public Tarea() {
     }
 
-    public Tarea(int id, String descripcion, LocalDate fechaLimite,
+    public Tarea(Integer id, String descripcion, LocalDate fechaLimite,
             double costoEstimado, Proyecto proyecto) {
 
         this.id = id;
@@ -47,11 +47,11 @@ public class Tarea {
         this.proyecto = proyecto;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
