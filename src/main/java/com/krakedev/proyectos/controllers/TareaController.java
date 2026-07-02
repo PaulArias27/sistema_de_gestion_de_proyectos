@@ -12,6 +12,16 @@ import com.krakedev.proyectos.services.TareaService;
 
 @RestController
 @RequestMapping("/api/tareas")
+@CrossOrigin(
+	    origins = "http://localhost:5173",
+	    allowedHeaders = {"Authorization", "Content-Type"},
+	    methods = {
+	        RequestMethod.GET,
+	        RequestMethod.POST,
+	        RequestMethod.PUT,
+	        RequestMethod.DELETE
+	    }
+	)
 public class TareaController {
 
     @Autowired

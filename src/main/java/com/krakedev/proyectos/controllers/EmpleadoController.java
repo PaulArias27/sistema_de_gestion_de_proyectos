@@ -12,6 +12,16 @@ import com.krakedev.proyectos.services.EmpleadoService;
 
 @RestController
 @RequestMapping("/api/empleados")
+@CrossOrigin(
+	    origins = "http://localhost:5173",
+	    allowedHeaders = {"Authorization", "Content-Type"},
+	    methods = {
+	        RequestMethod.GET,
+	        RequestMethod.POST,
+	        RequestMethod.PUT,
+	        RequestMethod.DELETE
+	    }
+	)
 public class EmpleadoController {
 
     @Autowired

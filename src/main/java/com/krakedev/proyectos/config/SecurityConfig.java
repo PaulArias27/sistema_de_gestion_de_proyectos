@@ -50,7 +50,8 @@ public class SecurityConfig {
 
                         .requestMatchers("/api/auth/**")
                         .permitAll()
-
+                        
+                        .requestMatchers("/api/proyectos/publico/resumen").permitAll()
                         .anyRequest()
                         .authenticated()
 

@@ -12,6 +12,16 @@ import com.krakedev.proyectos.services.ProyectoService;
 
 @RestController
 @RequestMapping("/api/proyectos")
+@CrossOrigin(
+	    origins = "http://localhost:5173",
+	    allowedHeaders = {"Authorization", "Content-Type"},
+	    methods = {
+	        RequestMethod.GET,
+	        RequestMethod.POST,
+	        RequestMethod.PUT,
+	        RequestMethod.DELETE
+	    }
+	)
 public class ProyectoController {
 
     @Autowired
@@ -107,5 +117,10 @@ public class ProyectoController {
                     .status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body(e.getMessage());
         }
+    }
+    
+    @GetMapping("/publico/resumen")
+    public ResponseEntity<Long> resumen() {
+        return ResponseEntity.ok(proyectoService.contar());
     }
 }
